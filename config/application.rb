@@ -12,8 +12,4 @@ class Application < Sinatra::Base
 
     set :show_exceptions, false
   end
-
-  # get '/compress' do
-  #   json status: :ok
-  # end
 end

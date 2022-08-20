@@ -3,5 +3,5 @@
 require_relative 'config/environment'
 
 map '/images' do
-  run Application
+  run ::Endpoints::Images
 end
