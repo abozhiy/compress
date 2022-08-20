@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+exec( "sidekiq -r ./config/environment.rb -C ./config/sidekiq.yml" )

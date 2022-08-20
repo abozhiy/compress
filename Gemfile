@@ -26,6 +26,10 @@ gem 'sidekiq'
 
 gem 'redis'
 
+gem 'rest-client'
+
+gem 'image_optimizer'
+
 group :development, :test do
   gem 'byebug'
   gem 'factory_bot'
