@@ -1,2 +1,3 @@
 db:
   database: compress_dev
+  password: mypassword
