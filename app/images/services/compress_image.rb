@@ -8,26 +8,28 @@ module Services
     end
 
     def call
-      compress_image!
+      message = failed
+      message = success if compress_image?
+
+      send_mail(message: message)
     end
 
     private
 
     attr_reader :uid
 
-    def compress_image!
-      message = failed
-
+    def compress_image?
       size_before = File.size(path)
-      ImageOptimizer.new(path, quality: 25).optimize
+      optimize
       size_after = File.size(path)
 
       if size_after < size_before
-        message = success
         add_compressed_at
+        return true
       end
-
-      send_mail(message: message)
+      false
+    rescue
+      false
     end
 
     def path
@@ -48,6 +50,10 @@ module Services
           message: message
         )
         .call
+    end
+
+    def optimize
+      ImageOptimizer.new(path, quality: 25).optimize
     end
 
     def success

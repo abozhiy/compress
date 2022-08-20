@@ -32,9 +32,10 @@ module Services
     end
 
     def add_to_uploads(uid:)
-      path = File.join(APP_ROOT, "#{UPLOADS_PATH}/#{uid}_#{file[:filename]}")
+      path = "#{UPLOADS_PATH}/#{uid}_#{file[:filename]}"
+
       File.open(path, 'wb') do |f|
-        f.write(file[:tempfile].read)
+        f.write file[:tempfile].read
       end
     end
 
