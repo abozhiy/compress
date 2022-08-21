@@ -34,7 +34,10 @@ group :development, :test do
   gem 'byebug'
   gem 'factory_bot'
   gem 'rack-test'
+  gem 'rspec'
   gem 'rspec-core'
+  gem 'rspec-expectations'
+  gem 'rspec-mocks'
   gem 'rubocop'
   gem 'ruby-debug-ide'
 end

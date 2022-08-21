@@ -32,6 +32,7 @@ GEM
       debase-ruby_core_source (>= 0.10.2)
     debase-ruby_core_source (0.10.16)
     deep_merge (1.2.2)
+    diff-lcs (1.5.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.8.1)
@@ -125,9 +126,19 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.5)
+    rspec (3.11.0)
+      rspec-core (~> 3.11.0)
+      rspec-expectations (~> 3.11.0)
+      rspec-mocks (~> 3.11.0)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
     rspec-json_expectations (2.2.0)
+    rspec-mocks (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
     rspec-support (3.11.0)
     rubocop (1.35.0)
       json (~> 2.3)
@@ -197,8 +208,11 @@ DEPENDENCIES
   rake
   redis
   rest-client
+  rspec
   rspec-core
+  rspec-expectations
   rspec-json_expectations
+  rspec-mocks
   rubocop
   ruby-debug-ide
   sequel
